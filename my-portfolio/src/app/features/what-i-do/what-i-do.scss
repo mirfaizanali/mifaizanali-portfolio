@@ -1,0 +1,96 @@
+.what-i-do {
+  padding: var(--section-padding);
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.do-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: rgba(22, 22, 22, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+
+  &:hover {
+    border-color: rgba(0, 188, 212, 0.4);
+    box-shadow:
+      0 12px 40px rgba(0, 188, 212, 0.15),
+      0 0 80px rgba(0, 188, 212, 0.05);
+    background: rgba(22, 22, 22, 0.7);
+
+    .card-icon i {
+      color: var(--primary);
+      animation: icon-bounce 0.4s ease;
+    }
+  }
+}
+
+.cards-grid.visible .do-card {
+  animation: fadeUp 0.55s ease-out forwards;
+}
+
+.card-icon {
+  margin-bottom: 1.5rem;
+
+  i {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+  }
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes icon-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.25);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+}

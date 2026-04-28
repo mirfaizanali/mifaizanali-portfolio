@@ -1,0 +1,63 @@
+<!-- Cursor Spotlight -->
+<div class="cursor-spotlight" [style.left.px]="cursorX()" [style.top.px]="cursorY()" [class.active]="cursorActive()"></div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" [style.width.%]="scrollPercent()"></div>
+
+<app-navbar></app-navbar>
+
+<main>
+  <app-hero></app-hero>
+
+  @defer (on viewport) {
+    <app-about></app-about>
+  } @placeholder {
+    <div class="section-placeholder"></div>
+  }
+
+  @defer (on viewport) {
+    <app-what-i-do></app-what-i-do>
+  } @placeholder {
+    <div class="section-placeholder"></div>
+  }
+
+  @defer (on viewport) {
+    <app-skills></app-skills>
+  } @placeholder {
+    <div class="section-placeholder"></div>
+  }
+
+  @defer (on viewport) {
+    <app-projects></app-projects>
+  } @placeholder {
+    <div class="section-placeholder"></div>
+  }
+
+  @defer (on viewport) {
+    <app-education></app-education>
+  } @placeholder {
+    <div class="section-placeholder"></div>
+  }
+
+  @defer (on viewport) {
+    <app-contact></app-contact>
+  } @placeholder {
+    <div class="section-placeholder"></div>
+  }
+</main>
+
+<app-footer></app-footer>
+
+<!-- Floating Scroll-to-Top -->
+<button
+  class="scroll-top-btn"
+  [class.visible]="showScrollTop()"
+  (click)="scrollToTop()"
+  aria-label="Scroll to top"
+>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<router-outlet />

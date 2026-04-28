@@ -1,0 +1,22 @@
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+
+    @for (category of categories; track category.title) {
+      <div class="category-block">
+        <h3 class="category-header">{{ category.title }}</h3>
+
+        @if (visible()) {
+          <div class="skills-grid" @staggerIn>
+            @for (skill of category.skills; track skill.name) {
+              <div class="skill-card" [appTilt3d]="12">
+                <i [class]="skill.icon" class="skill-icon"></i>
+                <span class="skill-name">{{ skill.name }}</span>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

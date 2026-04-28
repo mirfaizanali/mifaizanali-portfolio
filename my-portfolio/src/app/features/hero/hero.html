@@ -1,0 +1,23 @@
+<section class="hero" id="home">
+  <!-- 3D Particle Background -->
+  <app-particle-bg></app-particle-bg>
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="container hero-content">
+    <p class="greeting" [appParallax]="-0.08">Hi, I'm</p>
+    <h1 class="name" [appParallax]="-0.12">Mir Faizan Ali</h1>
+    <div class="typing-wrapper" [appParallax]="-0.06">
+      <span class="typing-text">{{ displayText() }}</span>
+      <span class="cursor">|</span>
+    </div>
+    <p class="intro" [appParallax]="-0.04">
+      Passionate about building scalable web applications and crafting clean, efficient code that solves real-world problems.
+    </p>
+    <div class="cta-group" [appParallax]="-0.02">
+      <a href="#contact" class="btn btn-primary">Contact Me</a>
+      <a href="#projects" class="btn btn-outline">View Projects</a>
+    </div>
+  </div>
+</section>

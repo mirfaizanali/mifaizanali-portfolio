@@ -1,0 +1,70 @@
+.footer {
+  background: #0a0a0a;
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+// ── Social Icons ──
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: var(--text-light);
+    transition: color 0.2s, transform 0.2s;
+
+    &:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// ── Copyright ──
+.copyright {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+// ── Back to Top ──
+.back-to-top {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// ── Responsive ──
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem;
+  }
+}

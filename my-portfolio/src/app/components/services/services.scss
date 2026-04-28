@@ -1,0 +1,85 @@
+.services {
+  background: var(--bg);
+}
+
+// ── Grid ──
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+// ── Card ──
+.service-card {
+  background: rgba(22, 22, 22, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 188, 212, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 188, 212, 0.1);
+
+    .service-icon svg {
+      color: var(--primary);
+      transform: scale(1.1);
+    }
+  }
+}
+
+// ── Icon ──
+.service-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: var(--text-light);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+}
+
+// ── Text ──
+.service-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.service-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+// ── Fade-in ──
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.services.visible .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// ── Responsive ──
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1.25rem;
+  }
+}

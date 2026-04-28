@@ -1,0 +1,17 @@
+<section class="what-i-do" id="what-i-do">
+  <div class="container">
+    <h2 class="section-title">What I Do</h2>
+
+    <div class="cards-grid" [class.visible]="visible()">
+      @for (item of items; track item.title; let i = $index) {
+        <div class="do-card fade-up" [appTilt3d]="10" [style.transition-delay]="(i * 0.12) + 's'">
+          <div class="card-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <h3 class="card-title">{{ item.title }}</h3>
+          <p class="card-desc">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

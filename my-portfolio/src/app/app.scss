@@ -1,0 +1,97 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+// ── Cursor Spotlight ──
+.cursor-spotlight {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 188, 212, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .cursor-spotlight {
+    display: none;
+  }
+}
+
+// ── Scroll Progress Bar ──
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary);
+  z-index: 1001;
+  transition: width 0.1s linear;
+}
+
+// ── Lazy-load Placeholder ──
+.section-placeholder {
+  min-height: 200px;
+}
+
+// ── Floating Scroll-to-Top ──
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-light);
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s, color 0.2s, border-color 0.2s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
+  }
+}

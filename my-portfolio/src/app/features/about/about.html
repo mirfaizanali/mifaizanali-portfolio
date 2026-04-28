@@ -1,0 +1,53 @@
+<section class="about" id="about" [class.visible]="visible()">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+      <!-- Profile Image -->
+      <div class="about-image fade-up fade-up-1">
+        <div class="image-wrapper">
+          <div class="cube-scene">
+            <div class="cube">
+              <div class="cube-face cube-front"><span class="monogram">MFA</span></div>
+              <div class="cube-face cube-back"><span class="monogram mono-alt">&lt;/&gt;</span></div>
+              <div class="cube-face cube-right"><span class="monogram mono-alt">{{ '{' }} {{ '}' }}</span></div>
+              <div class="cube-face cube-left"><span class="monogram">MFA</span></div>
+              <div class="cube-face cube-top"><span class="monogram mono-alt">01</span></div>
+              <div class="cube-face cube-bottom"><span class="monogram mono-alt">FA</span></div>
+            </div>
+          </div>
+          <div class="image-glow"></div>
+          <div class="image-border"></div>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="about-bio fade-up fade-up-2">
+        <h3>Who I Am</h3>
+        <p>
+          I'm <span class="highlight">Mir Faizan Ali</span>, a developer skilled in
+          <span class="highlight">Java</span>, <span class="highlight">Spring Boot</span>,
+          <span class="highlight">Angular</span>, and <span class="highlight">REST APIs</span>.
+          At <span class="highlight">Cognizant Technology Solutions</span>, I build scalable
+          backend services and responsive frontends — turning requirements into
+          production-ready solutions.
+        </p>
+        <p>
+          I care about clean code and well-designed APIs. Lately I've been deepening my
+          understanding of microservices architecture and how to build systems that scale
+          without adding unnecessary complexity.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row fade-up fade-up-3">
+      @for (stat of stats; track stat.label) {
+        <div class="stat-card" [appTilt3d]="15">
+          <span class="stat-value">{{ stat.value }}</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

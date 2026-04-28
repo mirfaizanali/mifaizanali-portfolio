@@ -1,0 +1,163 @@
+// ── Hero Section ──
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  overflow: hidden;
+}
+
+// ── Animated Background ──
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: grid-drift 20s linear infinite;
+}
+
+@keyframes grid-drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+// ── Content ──
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.greeting {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #00bcd4, #7c3aed, #00bcd4);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+// ── Typing Animation ──
+.typing-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  min-height: 2rem;
+}
+
+.typing-text {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.cursor {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--primary);
+  animation: blink 0.7s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+// ── Intro ──
+.intro {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+// ── Buttons ──
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #0f0f0f;
+
+  &:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 188, 212, 0.3);
+  }
+}
+
+.btn-outline {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+
+  &:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+}
+
+// ── Responsive ──
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.25rem;
+  }
+
+  .typing-text {
+    font-size: 1.1rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+  }
+
+}

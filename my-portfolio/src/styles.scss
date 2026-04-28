@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #00bcd4;
+  --primary-dark: #0097a7;
+  --bg: #0f0f0f;
+  --bg-alt: #1a1a1a;
+  --bg-card: #161616;
+  --text: #ffffff;
+  --text-light: #a0a0a0;
+  --border: #2a2a2a;
+  --section-padding: 5rem 1.5rem;
+  --max-width: 1100px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  padding: var(--section-padding);
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+}
+
+// ── Tablet ──
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 4rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+// ── Mobile ──
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+// ── Small Mobile ──
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 3rem 0.75rem;
+  }
+}
